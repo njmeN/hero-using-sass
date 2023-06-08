@@ -1,0 +1,26 @@
+@use "../abstract/variables" as vars;
+@mixin flex-center-wrap($direction,$justify-content){
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: $justify-content;
+}
+@mixin button-style($back-col,$color){
+   font-weight: 700;
+   font-size: 1rem;
+   line-height: 158.7%;
+   letter-spacing: -0.03em;
+   background-color: $back-col;
+   color: $color;
+   padding: 0.5rem 1.1rem;
+   border-radius: 2.5rem;
+   border-width: 0;
+   border: 2px solid vars.$color-primary; 
+}
+@mixin poppins-text ($text-size,$line-height){
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: $text-size;
+    line-height:$line-height;
+    color: vars.$color-primary;
+}    

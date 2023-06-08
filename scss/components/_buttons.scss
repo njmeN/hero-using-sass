@@ -1,0 +1,12 @@
+@use "../abstract/variables" as vars;
+@use "../abstract/mixins" as mix;
+@use "../base/fonts" as fonts;
+
+.button-white{
+    @include mix.button-style(vars.$color-primary, vars.$color-secondary);
+    @extend .open-sans;
+}
+.button-transparent{
+    @include mix.button-style( transparent,vars.$color-primary);
+    @extend .poppins;
+}

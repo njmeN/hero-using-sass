@@ -1,0 +1,72 @@
+@use "../abstract/mixins" as mix;
+@use "../abstract/variables" as vars;
+@use "../abstract/mediaqueries" as media;
+@use "../base/fonts";
+header{
+    background-image:url(../../img/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    #navWrapper{
+            @include mix.flex-center-wrap(row,space-between);
+            padding: 3rem 5rem 11.25rem;
+
+    
+                    .navWrapper-left{
+                        @include mix.flex-center-wrap(row,flex-start);
+                        gap: 3rem;
+                        .logo img{
+                            width: 2.7rem;
+                            height:2.7rem;
+                        }
+                        ul{
+                            @include mix.flex-center-wrap(row,flex-start);
+                            list-style: none;
+                            gap:3rem;
+                            li a{
+                                @include mix.poppins-text(0.8rem,147%);
+                            }
+                            
+                        }
+                    }
+                    .navWrapper-right{
+                        @include mix.flex-center-wrap(row,flex-start);
+                        .navWrapper-ul-replacement{
+                            display:none;
+                        }
+                        @include media.small{
+                            .navWrapper-ul-replacement{
+                                display: inline-block;
+                                width:3rem;
+                                height:3rem;
+                            }
+                        }
+                    }
+    }
+    .hero-content-container{
+        @include mix.flex-center-wrap(column,center);
+        .hero-text{
+            @include mix.poppins-text(4rem, 126.7%);
+            margin-bottom: 1rem;
+            width: 50%;
+            align-items: center;
+        }
+        .hero-desc{
+            @extend .open-sans;
+            color: vars.$color-primary;
+            font-weight: 400;
+            font-size: 1.2rem;
+            line-height: 158.7%;
+            letter-spacing: -0.03em;
+            margin-bottom: 3rem;
+            width: 46%;
+            align-items: center;
+        }
+        .hero-button-container{
+            @include mix.flex-center-wrap(row,center);
+            gap:2rem;
+            margin-bottom: 9.1rem;
+        }
+    }
+
+}

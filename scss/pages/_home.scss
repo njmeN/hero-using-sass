@@ -1,0 +1,14 @@
+@use "../abstract/mixins" as mix;
+.hero-scroll-container{
+    @include mix.flex-center-wrap(column,center);
+    gap:1rem;
+    @include mix.poppins-text(1.5rem,1.6rem);
+    img:first-child{
+        height:2.62rem;
+        width:1.75rem;
+    }
+    img:nth-child(3){
+        width:1.75rem;
+        height:2.5rem;
+    }
+}

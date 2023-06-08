@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+//1.Themes
+//2.Vendors
+//3.Base
+@use "base/base";
+@use "base/fonts";
+@use "base/normalize";
+
+//4.Layout
+@use 'layout/header';
+
+//5.Components
+@use "components/buttons";
+//6.page.Specific
+@use "pages/home";
