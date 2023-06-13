@@ -332,6 +332,7 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
 }
 header #navWrapper {
   display: flex;
@@ -371,9 +372,11 @@ header #navWrapper .navWrapper-right {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  gap: 0.5rem;
 }
-header #navWrapper .navWrapper-right .navWrapper-ul-replacement {
-  display: none;
+header #navWrapper .navWrapper-right .mobile-navwrapper-menu {
+  width: 2rem;
+  height: 2rem;
 }
 header .hero-content-container {
   display: flex;
@@ -387,9 +390,8 @@ header .hero-content-container .hero-text {
   font-size: 4rem;
   line-height: 126.7%;
   color: #FFFFFF;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem;
   width: 50%;
-  align-items: center;
 }
 header .hero-content-container .hero-desc {
   color: #FFFFFF;
@@ -397,9 +399,8 @@ header .hero-content-container .hero-desc {
   font-size: 1.2rem;
   line-height: 158.7%;
   letter-spacing: -0.03em;
-  margin-bottom: 3rem;
+  margin: 0 auto 3rem;
   width: 46%;
-  align-items: center;
 }
 header .hero-content-container .hero-button-container {
   display: flex;
@@ -410,6 +411,32 @@ header .hero-content-container .hero-button-container {
   margin-bottom: 9.1rem;
 }
 
+@media only screen and (max-width: 420px) {
+  header #navWrapper {
+    padding: 1rem 1rem 9rem;
+  }
+  header #navWrapper .navWrapper-left ul li {
+    display: none;
+  }
+  header #navWrapper .mobile-navwrapper-menu {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+  }
+  header .hero-content-container .hero-text {
+    font-family: "Poppins";
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 126.7%;
+    color: #FFFFFF;
+    width: 90%;
+    align-items: center;
+  }
+  header .hero-content-container .hero-desc {
+    font-size: 0.8rem;
+    width: 80%;
+  }
+}
 .button-white {
   font-weight: 700;
   font-size: 1rem;
@@ -436,6 +463,12 @@ header .hero-content-container .hero-button-container {
   border: 2px solid #FFFFFF;
 }
 
+@media only screen and (max-width: 420px) {
+  .button-white, .button-transparent {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.8rem;
+  }
+}
 .hero-scroll-container {
   display: flex;
   flex-direction: column;
@@ -455,4 +488,14 @@ header .hero-content-container .hero-button-container {
 .hero-scroll-container img:nth-child(3) {
   width: 1.75rem;
   height: 2.5rem;
+}
+
+@media only screen and (max-width: 420px) {
+  .hero-scroll-container {
+    font-family: "Poppins";
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.1rem;
+    color: #FFFFFF;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -7,6 +7,7 @@ header{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
     #navWrapper{
             @include mix.flex-center-wrap(row,space-between);
             padding: 3rem 5rem 11.25rem;
@@ -31,25 +32,20 @@ header{
                     }
                     .navWrapper-right{
                         @include mix.flex-center-wrap(row,flex-start);
-                        .navWrapper-ul-replacement{
-                            display:none;
+                        gap:0.5rem;
+                        .mobile-navwrapper-menu{      
+                            width:2rem;
+                            height:2rem;
                         }
-                        @include media.small{
-                            .navWrapper-ul-replacement{
-                                display: inline-block;
-                                width:3rem;
-                                height:3rem;
-                            }
-                        }
+                        
                     }
     }
     .hero-content-container{
         @include mix.flex-center-wrap(column,center);
         .hero-text{
             @include mix.poppins-text(4rem, 126.7%);
-            margin-bottom: 1rem;
+            margin:0 auto 1rem;
             width: 50%;
-            align-items: center;
         }
         .hero-desc{
             @extend .open-sans;
@@ -58,9 +54,9 @@ header{
             font-size: 1.2rem;
             line-height: 158.7%;
             letter-spacing: -0.03em;
-            margin-bottom: 3rem;
+            margin:0 auto 3rem;
             width: 46%;
-            align-items: center;
+            
         }
         .hero-button-container{
             @include mix.flex-center-wrap(row,center);
@@ -68,5 +64,33 @@ header{
             margin-bottom: 9.1rem;
         }
     }
+}
+@include media.media-query{
 
+    header{
+
+        #navWrapper{
+            padding:1rem 1rem 9rem;
+            .navWrapper-left ul li{
+                display: none;
+            }
+            .mobile-navwrapper-menu{
+                display: inline-block;
+                width:3rem;
+                height:3rem;
+            }
+        }
+        .hero-content-container{
+            .hero-text{
+                @include mix.poppins-text(2rem, 126.7%);
+                width:90%;
+                align-items: center;
+            }
+            .hero-desc{
+                font-size: 0.8rem;
+                width:80%;
+            }    
+        }
+    }
+        
 }

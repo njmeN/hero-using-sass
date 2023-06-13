@@ -1,6 +1,7 @@
 @use "../abstract/variables" as vars;
 @use "../abstract/mixins" as mix;
 @use "../base/fonts" as fonts;
+@use "../abstract/mediaqueries" as media;
 
 .button-white{
     @include mix.button-style(vars.$color-primary, vars.$color-secondary);
@@ -9,4 +10,10 @@
 .button-transparent{
     @include mix.button-style( transparent,vars.$color-primary);
     @extend .poppins;
+}
+@include media.media-query{
+    .button-white, .button-transparent{
+        font-size: 0.7rem;
+        padding: 0.3rem 0.8rem;
+    }
 }

@@ -1,4 +1,5 @@
 @use "../abstract/mixins" as mix;
+@use "../abstract/mediaqueries" as media;
 .hero-scroll-container{
     @include mix.flex-center-wrap(column,center);
     gap:1rem;
@@ -10,5 +11,10 @@
     img:nth-child(3){
         width:1.75rem;
         height:2.5rem;
+    }
+}
+@include media.media-query{
+    .hero-scroll-container{
+        @include mix.poppins-text(1rem,1.1rem);
     }
 }
